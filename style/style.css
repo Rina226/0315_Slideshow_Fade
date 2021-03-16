@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/*리셋*/
+* {
+    color: #000;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {text-decoration: none;}
+a:link {color: #222;}
+a:visited {color: #222;}
+a:hover {color: #222;}
+a:active {color: #222;}
+
+img {vertical-align: middle;}
+
+ul {list-style: none;}
+/*리셋*/
+
+
+div#wrap {
+    width: 1020px;
+    height: 370px; /*a요소가 앱솔루트이므로 적용*/
+    padding: 10px;
+    border: 1px solid #000;
+    margin: 40px auto;
+}
+
+
+/*슬라이드쇼 페이드(전환)효과*/
+div#slideArea {
+    width: 1000px;
+}
+
+div#shuttleFrame {
+    width: 1000px;
+}
+
+#slideArea a {
+    /*position: relative;*/ /*이미지가 한 곳에 겹쳐야 하므로 앱솔루트 사용*/
+    position: absolute;
+}
+
+#slideArea a:not(:first-child) {
+    display: none;
+    /*첫 번째 a요소만 출력하고 나머지 2개는 제거함*/
+}
+
+/*#slideArea a:nth-child(2) {
+    top: 240px;
+    opacity: 0.4;
+}
+#slideArea a:nth-child(3) {
+    top: 440px;
+}
+3차원에서 어떻게 위치하나 알아보려 적은 것. 슬라이드에선 필요없음*/
+
+#slideArea span {
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 100px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+/*슬라이드쇼 페이드(전환)효과*/
+
+
+
+
+
+
+
+
+
+
+
+

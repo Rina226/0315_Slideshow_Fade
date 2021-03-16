@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Fade 효과</title>
+    <style>
+        button {
+            font-size: 30px;
+        }
+
+        div {
+            width: 200px;
+            height: 400px;
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid #000;
+            margin: 40px;
+            /*float: left;*/
+        }
+
+        div#test1 {
+            background-color: #08f;
+            position: absolute;
+            /*z-index: 1;*/
+        }
+
+        div#test2 {
+            background-color: #f80;
+            position: absolute;
+            /*z-index: 0;*/ /*제트 인덱스는 3차원. 어차피 하나는 사라지고 하나는 나타나야 하기 때문에 쓰지 않아도 상관없음. 처음엔 보이지 않아야 할 것을 디스플레이 넌 적용해주기만 하는 것이 쉬움*/
+
+            display: none;
+        }
+    </style>
+    <script src="library/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $("button").click(function() {
+                $("div#test1").fadeOut(1000, function(){
+                    $("div#test2").text("Fade효과 완료!!");
+                });
+
+                $("div#test2").fadeIn(2000, function(){
+                    alert("ok");
+                });
+
+                //페이드아웃:점차 사라진다
+                //display:none; 적용해 처음에 보이지 않게 한 후 페이드인을 적용하면 버튼누름-점차 나타남 효과를 만들 수 있다.
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <h1>제이쿼리 페이드 애니메이션 효과</h1>
+
+    <button type="button">클릭!</button>
+
+    <div id="test1">Fadeout<br>효과</div>
+    <div id="test2">Fadein<br>효과</div>
+</body></html>
